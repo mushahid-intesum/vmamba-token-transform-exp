@@ -632,7 +632,7 @@ class SS2Dv2:
                 xs, dts, As, Bs, Cs, Ds, delta_bias, delta_softplus
             )
             
-            token_merge = False
+            token_merge = True
             if token_merge:
                 dts = F.softplus(dts)
 

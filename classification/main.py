@@ -488,10 +488,10 @@ if __name__ == '__main__':
         logger.debug(f"===========> GPU memory is limited to {usable_memory}MB", flush=True)
 
     main(config, args)
-    # dataset_train, dataset_val, data_loader_train, data_loader_val, mixup_fn = build_loader(config)
+    dataset_train, dataset_val, data_loader_train, data_loader_val, mixup_fn = build_loader(config)
 
-    # logger.debug(f"Creating model:{config.MODEL.TYPE}/{config.MODEL.NAME}")
-    # model = build_model(config)
-    # model.load_state_dict(torch.load('/mnt/Stuff/phd_projects/VMamba/vssm1_tiny_0230s_ckpt_epoch_264.pth')['model'])
+    logger.debug(f"Creating model:{config.MODEL.TYPE}/{config.MODEL.NAME}")
+    model = build_model(config)
+    model.load_state_dict(torch.load('/mnt/Stuff/phd_projects/VMamba/vssm1_tiny_0230s_ckpt_epoch_264.pth')['model'])
 
-    # acc1, acc5, loss = validate(config, data_loader_val, model)
+    acc1, acc5, loss = validate(config, data_loader_val, model)
